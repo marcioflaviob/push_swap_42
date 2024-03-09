@@ -6,11 +6,38 @@
 /*   By: mbrandao <mbrandao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 00:40:11 by mbrandao          #+#    #+#             */
-/*   Updated: 2024/03/09 00:40:32 by mbrandao         ###   ########.fr       */
+/*   Updated: 2024/03/09 01:18:07 by mbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+t_stack	*fill_stack_int(int *tab, int argc)
+{
+	int		i;
+	t_stack	*stack;
+	t_stack	*previous;
+
+	i = 0;
+	stack = (t_stack *)malloc(sizeof(t_stack));
+	stack->prev = NULL;
+	previous = stack;
+	while (i < (argc - 1))
+	{
+		stack->index = i;
+		stack->worst = 0;
+		stack->val = tab[i++];
+		if (i < (argc - 1))
+		{
+			stack->next = malloc(sizeof(t_stack));
+			stack = stack->next;
+			stack->prev = previous;
+			previous = stack;
+		}
+	}
+	stack->next = NULL;
+	return (get_first(stack));
+}
 
 void	free_and_exit(char **tab)
 {
