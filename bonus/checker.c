@@ -6,7 +6,7 @@
 /*   By: mbrandao <mbrandao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 22:22:01 by mbrandao          #+#    #+#             */
-/*   Updated: 2024/03/09 13:53:35 by mbrandao         ###   ########.fr       */
+/*   Updated: 2024/03/09 15:47:33 by mbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	error_end(char **nums, t_stack **stack, char ***commands)
 }
 	// char *argv[3];
 	// int argc = 2;
-	// char *bs = "bullshit";
+	// char *bs = "random";
 	// char *nm = "4 5 6 1 2 a";
 
 	// argv[0] = bs;
