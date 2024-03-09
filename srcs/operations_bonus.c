@@ -6,7 +6,7 @@
 /*   By: mbrandao <mbrandao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 20:02:14 by mbrandao          #+#    #+#             */
-/*   Updated: 2024/03/08 23:26:42 by mbrandao         ###   ########.fr       */
+/*   Updated: 2024/03/09 13:36:21 by mbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ t_stack	*swap_b(t_stack *stack)
 {
 	t_stack	*next;
 
+	if (stack->next == NULL)
+		return (stack);
 	next = stack->next;
 	stack->prev = next;
 	next->prev = NULL;
@@ -39,6 +41,8 @@ t_stack	*rotate_b(t_stack *stack)
 
 	stack = get_first(stack);
 	last = get_last(stack);
+	if (stack == last)
+		return (stack);
 	second = stack->next;
 	last->next = stack;
 	stack->prev = last;
@@ -54,6 +58,8 @@ t_stack	*reverse_rotate_b(t_stack *stack)
 
 	stack = get_first(stack);
 	last = get_last(stack);
+	if (stack == last)
+		return (stack);
 	last->prev->next = NULL;
 	last->prev = NULL;
 	last->next = stack;
