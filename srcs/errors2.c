@@ -6,7 +6,7 @@
 /*   By: mbrandao <mbrandao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 00:40:11 by mbrandao          #+#    #+#             */
-/*   Updated: 2024/03/09 15:50:09 by mbrandao         ###   ########.fr       */
+/*   Updated: 2024/03/09 15:51:49 by mbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ void	int_error_handler(int **nums2, char **argv, int argc, t_stack **stack)
 	*nums2 = (int *) malloc ((argc - 1) * sizeof(int));
 	while (i < (argc - 1))
 	{
-		(*nums2)[i] = ft_atoi(argv[i + 1]);
 		if (ft_atoi(argv[i + 1]) > INT_MAX || ft_atoi(argv[i + 1]) < INT_MIN)
 			(free (nums2), exit(1));
+		(*nums2)[i] = ft_atoi(argv[i + 1]);
 		i++;
 	}
 	if (check_duplicates_int(*nums2, argc))
