@@ -6,7 +6,7 @@
 /*   By: mbrandao <mbrandao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:17:28 by mbrandao          #+#    #+#             */
-/*   Updated: 2024/03/09 01:00:24 by mbrandao         ###   ########.fr       */
+/*   Updated: 2024/03/09 13:54:14 by mbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ t_stack	*push_b(t_stack *a, t_stack *b);
 int		step_checker(char **cmd, t_stack *a);
 void	error_check(char **nums);
 char	**read_stdin(void);
-void	free_all(char **s1, char **s2, t_stack *stack);
+void	free_all(char **s1, t_stack *stack);
 void	free_and_exit(char **tab);
 int		get_size(char **nums);
 int		get_size_stack(t_stack *stack);

@@ -6,7 +6,7 @@
 /*   By: mbrandao <mbrandao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 22:23:03 by mbrandao          #+#    #+#             */
-/*   Updated: 2024/03/09 00:19:33 by mbrandao         ###   ########.fr       */
+/*   Updated: 2024/03/09 13:53:51 by mbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,9 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (result);
 }
 
-void	free_all(char **s1, char **s2, t_stack *stack)
+void	free_all(char **s1, t_stack *stack)
 {
 	free_tab(s1);
-	free_tab(s2);
 	free_stack(stack);
 }
 

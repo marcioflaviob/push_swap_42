@@ -6,7 +6,7 @@
 /*   By: mbrandao <mbrandao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 22:20:23 by mbrandao          #+#    #+#             */
-/*   Updated: 2024/03/08 23:24:07 by mbrandao         ###   ########.fr       */
+/*   Updated: 2024/03/09 13:57:09 by mbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 void	step_checker3(char **cmd, t_stack ***a, t_stack ***b, int i)
 {
-	if (cmd[i][0] == 's' && cmd[i][1] == 'a')
+	if (cmd[i][0] == 's' && cmd[i][1] == 'a' && cmd[i][2] == 0)
 		**a = swap_b(**a);
-	else if (cmd[i][0] == 's' && cmd[i][1] == 'b')
+	else if (cmd[i][0] == 's' && cmd[i][1] == 'b' && cmd[i][2] == 0)
 		**b = swap_b(**b);
-	else if (cmd[i][0] == 's' && cmd[i][1] == 's')
+	else if (cmd[i][0] == 's' && cmd[i][1] == 's' && cmd[i][2] == 0)
 	{
 		**a = swap_b(**a);
 		**b = swap_b(**b);
 	}
-	else if (cmd[i][0] == 'p' && cmd[i][1] == 'b')
+	else if (cmd[i][0] == 'p' && cmd[i][1] == 'b' && cmd[i][2] == 0)
 	{
 		if (!(**b))
 		{
@@ -33,26 +33,35 @@ void	step_checker3(char **cmd, t_stack ***a, t_stack ***b, int i)
 		else
 			**a = push_b(**a, **b);
 	}
+	else
+	{
+		if (a != b)
+			(free_stack(**a), free_stack(**b), free_and_exit(cmd));
+		((free_stack(**a)), (free_and_exit(cmd)));
+	}
 }
 
 void	step_checker2(char **cmd, t_stack **a, t_stack **b, int i)
 {
-	if (cmd[i][0] == 'p' && cmd[i][1] == 'a')
+	if (cmd[i][0] == 'p' && cmd[i][1] == 'a' && cmd[i][2] == 0)
 		*b = push_b(*b, *a);
-	else if (cmd[i][0] == 'r' && cmd[i][1] == 'a')
+	else if (cmd[i][0] == 'r' && cmd[i][1] == 'a' && cmd[i][2] == 0)
 		*a = rotate_b(*a);
-	else if (cmd[i][0] == 'r' && cmd[i][1] == 'b')
+	else if (cmd[i][0] == 'r' && cmd[i][1] == 'b' && cmd[i][2] == 0)
 		*b = rotate_b(*b);
 	else if (cmd[i][0] == 'r' && cmd[i][1] == 'r' && cmd[i][2] == 0)
 	{
 		*a = rotate_b(*a);
 		*b = rotate_b(*b);
 	}
-	else if (cmd[i][0] == 'r' && cmd[i][1] == 'r' && cmd[i][2] == 'a')
+	else if (cmd[i][0] == 'r' && cmd[i][1] == 'r' && cmd[i][2] == 'a'
+		&& cmd[i][3] == 0)
 		*a = reverse_rotate_b(*a);
-	else if (cmd[i][0] == 'r' && cmd[i][1] == 'r' && cmd[i][2] == 'b')
+	else if (cmd[i][0] == 'r' && cmd[i][1] == 'r' && cmd[i][2] == 'b'
+		&& cmd[i][3] == 0)
 		*b = reverse_rotate_b(*b);
-	else if (cmd[i][0] == 'r' && cmd[i][1] == 'r' && cmd[i][2] == 'r')
+	else if (cmd[i][0] == 'r' && cmd[i][1] == 'r' && cmd[i][2] == 'r'
+		&& cmd[i][3] == 0)
 	{
 		*a = reverse_rotate_b(*a);
 		*b = reverse_rotate_b(*b);

@@ -6,7 +6,7 @@
 /*   By: mbrandao <mbrandao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 22:22:01 by mbrandao          #+#    #+#             */
-/*   Updated: 2024/03/09 13:36:56 by mbrandao         ###   ########.fr       */
+/*   Updated: 2024/03/09 13:53:35 by mbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ int	main(int argc, char **argv)
 {
 	char	**commands;
 	char	**nums;
+	int		nums_size;
 	t_stack	*stack;
 
 	if (argc != 2)
@@ -57,17 +58,15 @@ int	main(int argc, char **argv)
 	stack = NULL;
 	commands = NULL;
 	error_end(nums, &stack, &commands);
+	nums_size = get_size(nums);
+	free_tab (nums);
 	if (step_checker(commands, stack))
 	{
-		if (get_size(nums) != get_size_stack(stack))
-		{
-			free_all(nums, commands, stack);
-			ft_putstr_fd("KO\n", 1);
-			exit(1);
-		}
+		if (nums_size != get_size_stack(stack))
+			(free_all(commands, stack), ft_putstr_fd("KO\n", 1), exit(1));
 		ft_putstr_fd("OK\n", 1);
 	}
 	else
 		ft_putstr_fd("KO\n", 1);
-	free_all(nums, commands, stack);
+	free_all(commands, stack);
 }
