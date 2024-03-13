@@ -91,7 +91,7 @@ int	main(int argc, char **argv)
 	nums = NULL;
 	stack = NULL;
 	if (argc < 2)
-		(ft_putstr_fd("Correct usage: ./push_swap n1 n2 n3\n", 1), exit (1));
+		exit (1);
 	else if (argc == 2)
 		argc2_error_handler(nums, argv, &stack);
 	else if (argc > 2)

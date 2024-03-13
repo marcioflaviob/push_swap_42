@@ -6,7 +6,7 @@
 /*   By: mbrandao <mbrandao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 22:20:23 by mbrandao          #+#    #+#             */
-/*   Updated: 2024/03/09 13:57:09 by mbrandao         ###   ########.fr       */
+/*   Updated: 2024/03/13 15:53:35 by mbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,26 +115,4 @@ char	**read_stdin(void)
 	}
 	free (buff);
 	return (result);
-}
-
-void	error_check(char **nums)
-{
-	int	i;
-
-	i = 0;
-	while (nums[i])
-	{
-		if (check_invalid_char(nums, 0))
-			free_and_exit(nums);
-		if (check_duplicates_char(nums))
-			free_and_exit(nums);
-		if (check_size(nums[i]))
-			free_and_exit(nums);
-		if (ft_atoi(nums[i]) > INT_MAX || ft_atoi(nums[i]) < INT_MIN)
-		{
-			free_tab(nums);
-			error_exit();
-		}
-		i++;
-	}
 }

@@ -6,7 +6,7 @@
 /*   By: mbrandao <mbrandao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 00:40:11 by mbrandao          #+#    #+#             */
-/*   Updated: 2024/03/09 15:53:22 by mbrandao         ###   ########.fr       */
+/*   Updated: 2024/03/13 23:26:42 by mbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	argc2_error_handler(char **nums, char **argv, t_stack **stack)
 
 	i = 0;
 	if (argv[1][0] == 0)
-		error_exit();
+		exit(1);
 	nums = ft_split(argv[1], ' ');
 	if (check_invalid_char(nums, 0))
 		free_and_exit(nums);

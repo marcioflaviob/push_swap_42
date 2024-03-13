@@ -6,7 +6,7 @@
 /*   By: mbrandao <mbrandao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 15:17:28 by mbrandao          #+#    #+#             */
-/*   Updated: 2024/03/09 13:54:14 by mbrandao         ###   ########.fr       */
+/*   Updated: 2024/03/13 16:06:53 by mbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	error_check(char **nums);
 char	**read_stdin(void);
 void	free_all(char **s1, t_stack *stack);
 void	free_and_exit(char **tab);
-int		get_size(char **nums);
+void	get_sz(char **nums, int *nums2, int *size, int argc);
 int		get_size_stack(t_stack *stack);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mbrandao <mbrandao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 22:23:03 by mbrandao          #+#    #+#             */
-/*   Updated: 2024/03/09 13:53:51 by mbrandao         ###   ########.fr       */
+/*   Updated: 2024/03/13 16:05:07 by mbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,21 @@ void	free_all(char **s1, t_stack *stack)
 	free_stack(stack);
 }
 
-int	get_size(char **nums)
+void	get_sz(char **nums, int *nums2, int *size, int argc)
 {
 	int	i;
 
 	i = 0;
-	while (nums[i])
-		i++;
-	return (i);
+	if (nums != NULL)
+	{
+		while (nums[i])
+			i++;
+		*size = i;
+		free (nums);
+		return ;
+	}
+	free (nums2);
+	*size = (argc - 1);
 }
 
 int	get_size_stack(t_stack *stack)

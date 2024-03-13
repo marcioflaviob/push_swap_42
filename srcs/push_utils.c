@@ -6,7 +6,7 @@
 /*   By: mbrandao <mbrandao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 20:51:49 by mbrandao          #+#    #+#             */
-/*   Updated: 2024/03/08 23:42:06 by mbrandao         ###   ########.fr       */
+/*   Updated: 2024/03/13 22:48:11 by mbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,10 +85,13 @@ void	free_tab(char **tab)
 	int	i;
 
 	i = 0;
-	while (tab[i])
+	if (tab)
 	{
-		free(tab[i]);
-		i++;
+		while (tab[i])
+		{
+			free(tab[i]);
+			i++;
+		}
 	}
 	free(tab);
 }
