@@ -6,7 +6,7 @@
 /*   By: mbrandao <mbrandao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 22:23:03 by mbrandao          #+#    #+#             */
-/*   Updated: 2024/03/13 16:05:07 by mbrandao         ###   ########.fr       */
+/*   Updated: 2024/03/14 12:21:48 by mbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	get_sz(char **nums, int *nums2, int *size, int argc)
 		while (nums[i])
 			i++;
 		*size = i;
-		free (nums);
+		free_tab (nums);
 		return ;
 	}
 	free (nums2);
