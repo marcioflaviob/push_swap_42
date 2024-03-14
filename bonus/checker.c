@@ -6,7 +6,7 @@
 /*   By: mbrandao <mbrandao@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 22:22:01 by mbrandao          #+#    #+#             */
-/*   Updated: 2024/03/13 23:15:38 by mbrandao         ###   ########.fr       */
+/*   Updated: 2024/03/14 14:32:24 by mbrandao         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	int_error_checker(int **nums2, char **argv, int argc, t_stack **stack)
 	while (i < (argc - 1))
 	{
 		if (ft_atoi(argv[i + 1]) > INT_MAX || ft_atoi(argv[i + 1]) < INT_MIN)
-			(free (*nums2), exit(1));
+			(free (*nums2), error_exit());
 		(*nums2)[i] = ft_atoi(argv[i + 1]);
 		i++;
 	}
